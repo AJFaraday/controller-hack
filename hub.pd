@@ -196,14 +196,16 @@
 #X restore 18 241 pd player-colision;
 #X obj 323 112 metro 30;
 #X obj 68 5 controller 7 stick;
-#N canvas 695 440 450 300 from_ruby 1;
+#N canvas 695 440 450 300 from_ruby 0;
 #X obj 28 23 netreceive 9595 1;
 #X obj 28 56 route shape drum;
 #X obj 28 141 s ruby-shape;
 #X obj 74 93 s ruby-drum;
 #X text 92 73 drum name;
 #X text 47 115 shape name xpos ypos size;
+#X obj 144 53 print ruby:;
 #X connect 0 0 1 0;
+#X connect 0 0 6 0;
 #X connect 1 0 2 0;
 #X connect 1 1 3 0;
 #X restore 15 279 pd from_ruby;

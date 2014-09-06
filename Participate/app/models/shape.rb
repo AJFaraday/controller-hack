@@ -23,7 +23,7 @@ class Shape < ActiveRecord::Base
     100
   ]
 
-  size_opts = [
+  SIZE_OPTS = [
     0.1,
     0.2,
     0.3,
@@ -35,6 +35,10 @@ class Shape < ActiveRecord::Base
     0.9,
     1
   ]
+
+  scope :active, lambda{where(:active => true).order('name asc')}
+  scope :inactive, lambda{where(:active => [false,nil]).order('name asc')}
+
 
   cattr_accessor :pd_connect
 
@@ -66,5 +70,10 @@ class Shape < ActiveRecord::Base
     puts er.backtrace
   end
 
+  def randomise
+    self.xpos = Shape::POS_OPTS[rand(Shape::POS_OPTS.size)]
+    self.ypos = Shape::POS_OPTS[rand(Shape::POS_OPTS.size)]
+    self.size = Shape::SIZE_OPTS[rand(Shape::SIZE_OPTS.size)]
+  end
 
 end

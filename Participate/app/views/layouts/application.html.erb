@@ -2,11 +2,20 @@
 <html>
 <head>
   <title>Participate</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', 'bootstrap.min', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'bootstrap.min', 'data-turbolinks-track' => true %>
+  <%= %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<% if flash[:notice] and !flash[:notice].blank? %>
+  <div class="alert alert-success" role="alert"><%= flash[:notice] %></div>
+<% end %>
+
+<% if flash[:error] and !flash[:error].blank? %>
+  <div class="alert alert-error" role="alert"><%= flash[:error] %></div>
+<% end %>
 
 <%= yield %>
 
