@@ -1,0 +1,35 @@
+#N canvas 909 269 450 458 10;
+#X obj 29 95 mtof;
+#X obj 29 72 \$1;
+#X obj 29 47 loadbang;
+#X obj 43 27 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 30 382 dac~;
+#X obj 29 198 *~;
+#X obj 73 172 r~ \$2-keyvol;
+#X obj 29 352 *~ 0.1;
+#X obj 30 320 *~;
+#X obj 50 229 r \$0-trig;
+#X msg 50 253 1 10 \, 0.4 100 10 \, 0 500 110;
+#X obj 47 274 vline~;
+#X obj 121 230 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 203 129 note-player-collision orb \$2 \$0;
+#X obj 197 105 note-player-collision stick \$2 \$0;
+#X obj 29 138 key-synth;
+#X obj 80 89 r \$0-param;
+#X connect 0 0 15 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X connect 5 0 8 0;
+#X connect 6 0 5 1;
+#X connect 7 0 4 0;
+#X connect 7 0 4 1;
+#X connect 8 0 7 0;
+#X connect 9 0 10 0;
+#X connect 9 0 12 0;
+#X connect 10 0 11 0;
+#X connect 11 0 8 1;
+#X connect 15 0 5 0;
+#X connect 16 0 15 1;

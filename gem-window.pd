@@ -1,0 +1,20 @@
+#N canvas 647 332 450 299 10;
+#X obj 28 91 gemwin;
+#X obj 28 7 loadbang;
+#X obj 260 12 key;
+#X obj 260 36 sel 27;
+#X msg 256 63 destroy;
+#X msg 28 63 reset \, dimen \$1 \$2 \, create \, 1;
+#X obj 27 36 pack \$1 \$2;
+#X obj 91 15 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 40 127 25 keys;
+#X text 42 162 position = size * index;
+#X text 41 147 size = 8 / 25;
+#X connect 1 0 6 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X connect 6 0 5 0;
+#X connect 7 0 6 0;
