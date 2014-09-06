@@ -1,4 +1,4 @@
-#N canvas 648 199 574 430 10;
+#N canvas 648 200 574 430 10;
 #X obj 14 49 hid;
 #X msg 14 26 print;
 #X text 191 -1 saitek st200 stick;
@@ -88,7 +88,6 @@
 #X text 33 23 Replace name with name of controller;
 #X text 29 164 name-r - tidied up y axis (Stick only);
 #X restore 351 24 pd controller_reference;
-#X obj 68 5 controller 11 stick;
 #X obj 15 96 gem-window 700 700;
 #N canvas 37 409 450 300 keyboard-input 0;
 #X obj 27 23 notein;
@@ -196,7 +195,8 @@
 #X connect 23 0 17 0;
 #X restore 18 241 pd player-colision;
 #X obj 323 112 metro 30;
+#X obj 68 5 controller 7 stick;
 #X connect 1 0 0 0;
-#X connect 11 0 16 0;
-#X connect 13 0 11 0;
-#X connect 16 0 12 0;
+#X connect 10 0 15 0;
+#X connect 12 0 10 0;
+#X connect 15 0 11 0;
