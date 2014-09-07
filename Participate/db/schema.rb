@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140906230134) do
+ActiveRecord::Schema.define(version: 20140906234457) do
 
   create_table "shapes", force: true do |t|
     t.string   "name"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20140906230134) do
     t.boolean  "active"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "passed"
   end
 
 end

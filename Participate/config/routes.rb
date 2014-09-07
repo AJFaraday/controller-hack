@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 
   root 'application#index'
-  resources :shapes, :only => [:edit,:update]
+  resources :shapes, :only => [:edit,:update] do
+    collection do
+      get :reset
+    end
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

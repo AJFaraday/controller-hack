@@ -1,1 +1,7 @@
-Shape.register('test')
+Shape.register('red')
+Shape.register('yellow')
+Shape.register('green')
+Shape.register('teal')
+Shape.register('blue')
+Shape.register('purple')
+Shape.register('white')

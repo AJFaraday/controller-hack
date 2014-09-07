@@ -8,7 +8,13 @@
 
   <div class="form-group">
     <%= form.label :xpos %>
-    <%= form.select(
+    <input type="text" class="span2" value="<%= @shape.xpos%>"
+           id="xpos" name="shape[xpos]"
+           data-slider-min="0" data-slider-max="100"
+           data-slider-step="1" data-slider-value="<%= @shape.xpos %>"
+           data-slider-orientation="vertcal"
+           data-slider-selection="after" data-slider-tooltip="hide">
+    <%#= form.select(
           :xpos,
           options_for_select(
             Shape::POS_OPTS,
@@ -19,7 +25,13 @@
 
   <div class="form-group">
     <%= form.label :ypos %>
-    <%= form.select(
+    <input type="text" class="span2" value="<%= @shape.ypos%>"
+           id="ypos" name="shape[ypos]"
+           data-slider-min="0" data-slider-max="100"
+           data-slider-step="1" data-slider-value="<%= @shape.ypos %>"
+           data-slider-orientation="vertical"
+           data-slider-selection="after" data-slider-tooltip="hide">
+    <%#= form.select(
           :ypos,
           options_for_select(
             Shape::POS_OPTS,
@@ -30,7 +42,12 @@
 
   <div class="form-group">
     <%= form.label :size%>
-    <%= form.select(
+    <input type="text" class="span2" value="<%= @shape.size%>"
+           id="size" name="shape[size]"
+           data-slider-min="0" data-slider-max="1"
+           data-slider-step="0.05" data-slider-value="<%= @shape.size %>"
+           data-slider-selection="after" data-slider-tooltip="hide">
+    <%#= form.select(
           :size,
           options_for_select(
             Shape::SIZE_OPTS,
@@ -40,7 +57,16 @@
   </div>
 
   <%= form.hidden_field :active %>
+  <%= form.hidden_field :passed %>
+
 
   <%= form.submit 'Place Shape', :class=> 'btn btn-default' %>
 
 <% end %>
+
+<script type=text/javascript>
+  $('#xpos').slider();
+  $('#ypos').slider();
+  $('#size').slider();
+
+</script>

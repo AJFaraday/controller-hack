@@ -46,10 +46,21 @@ class Shape < ActiveRecord::Base
     return @@pd_connect if @@pd_connect
     @@pd_connect = UDPSocket.new
     @@pd_connect.connect('localhost', 9595)
+    @@pd_connect
   end
 
   def Shape.send_message(message)
     Shape.pd_connect.send("#{message};\n",0)
+  end
+
+  # places shape on the board by passing a message to pd
+  #
+  # shape name xpos ypos size
+  # shape test 50 50 0.2
+  #
+  def pass
+    Shape.send_message("shape #{name} #{xpos} #{ypos} #{size}")
+    update_attribute :passed, true
   end
 
   def Shape.register(name)
