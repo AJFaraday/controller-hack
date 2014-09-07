@@ -14,7 +14,8 @@
 <% end %>
 
 <h2>Drums</h2>
-<table class='table table-bordered'>
+<%= link_to "reset", "#", :id => 'reset_link' %>
+<table class='table table-bordered' id="drum-table">
   <thead>
   <tr>
     <th></th>
@@ -38,6 +39,13 @@
 </table>
 
 <script type="text/javascript">
+
+  $('#reset_link').on('click', function() {
+    $.get('/steps/reset');
+    $('#drum-table tr td').removeClass('active');
+    $('#drum-table tr:last td').addClass('active');
+  });
+
   $('.step-choose').on('click', function () {
     var columnNo = $(this).index();
     $(this).closest("table").find("tr td:nth-child(" + (columnNo+1) + ")").removeClass('success');

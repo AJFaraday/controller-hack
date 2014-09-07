@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     collection do
       post :set
       put :set
+      get :reset
     end
   end
 

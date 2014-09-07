@@ -6,4 +6,9 @@ class StepsController < ApplicationController
     step.save
   end
 
+  def reset
+    blank_drum = Drum.find_by_name('none')
+    Step.connection.execute("update steps set drum_id = #{blank_drum.id};")
+  end
+
 end
