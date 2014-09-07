@@ -1,4 +1,4 @@
-#N canvas 710 182 574 430 10;
+#N canvas 710 183 574 430 10;
 #X obj 14 49 hid;
 #X msg 14 26 print;
 #X text 191 -1 saitek st200 stick;
@@ -194,7 +194,7 @@
 #X connect 22 1 21 1;
 #X connect 23 0 17 0;
 #X restore 18 241 pd player-colision;
-#X obj 323 112 metro 30;
+#X obj 322 112 metro 30;
 #N canvas 771 292 450 300 to-ruby 0;
 #X obj 58 253 netsend 1;
 #X msg 128 166 connect localhost 5959;
