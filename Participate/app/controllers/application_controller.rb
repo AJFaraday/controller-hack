@@ -5,5 +5,7 @@ class ApplicationController < ActionController::Base
 
   def index
     @shapes = Shape.inactive.all
+    @drums = Drum.all
+    @steps = Step.order('position asc').all
   end
 end

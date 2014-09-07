@@ -12,6 +12,13 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :steps, :only => [] do
+    collection do
+      post :set
+      put :set
+    end
+  end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

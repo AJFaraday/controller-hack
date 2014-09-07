@@ -1,4 +1,4 @@
-#N canvas 41 196 574 430 10;
+#N canvas 710 182 574 430 10;
 #X obj 14 49 hid;
 #X msg 14 26 print;
 #X text 191 -1 saitek st200 stick;
@@ -144,7 +144,7 @@
 #X obj 322 134 s display-click;
 #X obj 322 67 loadbang;
 #X obj 17 194 player orb lx ly 0 0 1;
-#N canvas 694 261 628 383 player-colision 0;
+#N canvas 694 262 628 383 player-colision 0;
 #X obj 23 28 r stick-xpos;
 #X floatatom 23 58 5 0 0 0 - - -;
 #X obj 69 62 r orb-xpos;
@@ -195,7 +195,6 @@
 #X connect 23 0 17 0;
 #X restore 18 241 pd player-colision;
 #X obj 323 112 metro 30;
-#X obj 68 5 controller 7 stick;
 #N canvas 771 292 450 300 to-ruby 0;
 #X obj 58 253 netsend 1;
 #X msg 128 166 connect localhost 5959;
@@ -229,6 +228,15 @@
 #X connect 1 0 2 0;
 #X connect 1 1 3 0;
 #X restore 15 279 pd from-ruby;
+#X obj 69 5 controller 4 stick;
+#N canvas 902 440 450 300 drums 0;
+#X obj 44 25 drum kick;
+#X obj 44 47 drum snare;
+#X obj 44 69 drum hat;
+#X obj 44 91 drum tom1;
+#X obj 44 113 drum tom2;
+#X obj 44 135 drum tom3;
+#X restore 17 338 pd drums;
 #X connect 1 0 0 0;
 #X connect 10 0 15 0;
 #X connect 12 0 10 0;
