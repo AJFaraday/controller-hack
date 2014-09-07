@@ -6,13 +6,13 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 
   root 'application#index'
-  resources :shapes, :only => [:edit,:update] do
+  resources :shapes, :only => [:index,:edit,:update] do
     collection do
       get :reset
     end
   end
 
-  resources :steps, :only => [] do
+  resources :steps, :only => [:index] do
     collection do
       post :set
       put :set

@@ -1,0 +1,13 @@
+<h2>Shapes:</h2>
+
+<%= link_to "Reset Shapes", reset_shapes_path, :confirm => "Do not do this unless you're Andrew!" %>
+
+<% if @shapes.any? %>
+  <ul>
+    <% @shapes.each do |shape| %>
+      <li><%= link_to shape.name, edit_shape_path(shape) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>It looks like all the shapes are already on the board</p>
+<% end %>

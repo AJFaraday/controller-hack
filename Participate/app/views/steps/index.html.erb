@@ -1,0 +1,46 @@
+<h2>Drums</h2>
+<%= link_to "reset", "#", :id => 'reset_link' %>
+<table class='table table-bordered' id="drum-table">
+  <thead>
+  <tr>
+    <th></th>
+    <% @steps.each do |step| %>
+      <th><%= step.position %></th>
+    <% end %>
+  </tr>
+  </thead>
+  <tbody>
+  <% @drums.each do |drum| %>
+    <tr>
+      <th><%= drum.name %></th>
+      <% @steps.each do |step| %>
+        <td class='step-choose <%= 'success' if step.drum == drum %>'
+            id="<%= step.id %>" drum_id='<%= drum.id %>'></td>
+      <% end %>
+    </tr>
+  <% end %>
+  </tbody>
+
+</table>
+
+<script type="text/javascript">
+
+  $('#reset_link').on('click', function() {
+    $.get('/steps/reset');
+    $('#drum-table tr td').removeClass('active');
+    $('#drum-table tr:last td').addClass('active');
+  });
+
+  $('.step-choose').on('click', function () {
+    var columnNo = $(this).index();
+    $(this).closest("table").find("tr td:nth-child(" + (columnNo+1) + ")").removeClass('success');
+    $(this).addClass('success');
+    $.post(
+      '/steps/set',
+      {
+        id: $(this).attr("id"),
+        drum_id: $(this).attr('drum_id')
+      }
+    )
+  });
+</script>

@@ -14,12 +14,12 @@ class ShapesController < ApplicationController
     else
       flash[:error] = 'Something went wrong, oops'
     end
-    redirect_to '/'
+    redirect_to shapes_path
   end
 
   def reset
     Shape.all.each{|x|x.update_attribute :active, :false}
-    redirect_to '/'
+    redirect_to shapes_path
   end
 
   protected
