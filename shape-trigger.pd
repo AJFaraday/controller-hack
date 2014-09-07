@@ -1,4 +1,4 @@
-#N canvas 788 115 450 567 10;
+#N canvas 629 117 609 567 10;
 #X text 38 16 shape_name player_name shape_\$0;
 #X text 38 35 \$3-x \$3-y - shape position;
 #X text 42 51 \$3-size - shape size;
@@ -18,7 +18,7 @@
 #X obj 5 339 +;
 #X obj 26 308 t b f;
 #X obj 53 503 t b b;
-#X obj 129 520 spigot;
+#X obj 129 522 spigot;
 #X obj 162 499 r \$3-on;
 #X msg 53 549 0;
 #X obj 53 481 sel 4;
@@ -52,6 +52,8 @@
 #X obj 124 209 + 0.1;
 #X obj 231 277 + 0.1;
 #X obj 320 277 + 0.1;
+#X obj 266 540 s \$2-score;
+#X obj 36 388 r reset-game;
 #X connect 6 0 14 0;
 #X connect 7 0 8 0;
 #X connect 8 0 14 1;
@@ -71,6 +73,7 @@
 #X connect 18 1 19 0;
 #X connect 19 0 33 0;
 #X connect 19 0 35 0;
+#X connect 19 0 53 0;
 #X connect 20 0 19 1;
 #X connect 21 0 34 0;
 #X connect 22 0 18 0;
@@ -102,3 +105,4 @@
 #X connect 50 0 13 1;
 #X connect 51 0 37 1;
 #X connect 52 0 44 1;
+#X connect 54 0 21 0;

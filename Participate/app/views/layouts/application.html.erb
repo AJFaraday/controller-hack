@@ -6,6 +6,8 @@
   <%= javascript_include_tag 'application', 'bootstrap.min', 'bootstrap-slider', 'data-turbolinks-track' => true %>
   <%= %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
 </head>
 <body>
 
@@ -17,8 +19,12 @@
   <div class="alert alert-error" role="alert"><%= flash[:error] %></div>
 <% end %>
 
-<%= link_to 'shapes', shapes_path %>
-<%= link_to 'drums', steps_path %>
+<ul>
+  <li><%= link_to 'shapes', shapes_path %></li>
+  <li><%= link_to 'drums', steps_path %></li>
+  <li><%= link_to 'reset game', reset_shapes_path %></li>
+</ul>
+
 
 <%= yield %>
 

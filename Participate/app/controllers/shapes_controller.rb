@@ -19,6 +19,7 @@ class ShapesController < ApplicationController
 
   def reset
     Shape.all.each{|x|x.update_attribute :active, :false}
+    Shape.send_message('reset-game 1')
     redirect_to shapes_path
   end
 

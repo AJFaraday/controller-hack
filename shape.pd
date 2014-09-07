@@ -1,4 +1,4 @@
-#N canvas 642 55 525 504 10;
+#N canvas 642 56 525 504 10;
 #X obj 21 25 r ruby-shape;
 #X obj 21 55 route \$1;
 #X obj 21 91 unpack f f f;
@@ -52,8 +52,8 @@
 #X connect 12 0 4 0;
 #X restore 345 47 pd shape-sound;
 #X obj 326 271 shape-trigger \$1 stick \$0;
-#X obj 328 296 shape-trigger \$1 orb \$0;
 #X obj 169 370 r \$0-y;
+#X obj 328 296 shape-trigger \$1 orb \$0;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 4 0;
@@ -72,4 +72,4 @@
 #X connect 17 0 2 0;
 #X connect 18 0 14 0;
 #X connect 19 0 9 0;
-#X connect 25 0 10 2;
+#X connect 24 0 10 2;
